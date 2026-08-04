@@ -44,6 +44,6 @@ class Cast < Formula
   end
 
   test do
-    system "#{bin}/cast", "--help"
+    system bin/"cast", "--help"
   end
 end
