@@ -5,21 +5,21 @@
 class Cast < Formula
   desc "Typecast Text-to-Speech CLI"
   homepage "https://github.com/neosapience/cast"
-  version "1.0.6"
+  version "1.0.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/neosapience/cast/releases/download/v1.0.6/cast_darwin_amd64.tar.gz"
-      sha256 "db8abf04bc1d6d41439d8ca1c1f701c64a20f3b52381b51fc297560ba8a4faab"
+      url "https://github.com/neosapience/cast/releases/download/v1.0.7/cast_darwin_amd64.tar.gz"
+      sha256 "39313d6ab5d306678696652dbb11db99cfb140c2bd47296fdb54a6269e79ec2c"
 
       define_method(:install) do
         bin.install "cast"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/neosapience/cast/releases/download/v1.0.6/cast_darwin_arm64.tar.gz"
-      sha256 "7e2705d1fd140e0855c32fabfe270f8b9c28ae4c3b5a1a90c8a004605452021b"
+      url "https://github.com/neosapience/cast/releases/download/v1.0.7/cast_darwin_arm64.tar.gz"
+      sha256 "d88828700ffefbfceb1b2183a7fbeddf456eb5c0a15f4327b7fd0f0ad65baa2e"
 
       define_method(:install) do
         bin.install "cast"
@@ -29,15 +29,15 @@ class Cast < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/neosapience/cast/releases/download/v1.0.6/cast_linux_amd64.tar.gz"
-      sha256 "cc51f0ddd1c5640b034dd5313b0223fd6d9b5e1c3661640bf70626ec885b594d"
+      url "https://github.com/neosapience/cast/releases/download/v1.0.7/cast_linux_amd64.tar.gz"
+      sha256 "e2da6568d224ad2f9ee22e6dc37c09777338478d64b4bc1ef1db96d2d16c98eb"
       define_method(:install) do
         bin.install "cast"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/neosapience/cast/releases/download/v1.0.6/cast_linux_arm64.tar.gz"
-      sha256 "2c010f1b32a4d65e1caf4805ca2addd45f30338506ea6eeef4398910a336be93"
+      url "https://github.com/neosapience/cast/releases/download/v1.0.7/cast_linux_arm64.tar.gz"
+      sha256 "8ce3d4595e0bc741f62a01ab53393ff061a7391fe21d7c825082f7f1985f80ef"
       define_method(:install) do
         bin.install "cast"
       end
