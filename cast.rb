@@ -5,7 +5,6 @@
 class Cast < Formula
   desc "Typecast Text-to-Speech CLI"
   homepage "https://github.com/neosapience/cast"
-  version "1.0.7"
   license "MIT"
 
   on_macos do
@@ -45,6 +44,6 @@ class Cast < Formula
   end
 
   test do
-    system "#{bin}/cast", "--help"
+    system bin/"cast", "--help"
   end
 end
