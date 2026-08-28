@@ -5,20 +5,21 @@
 class Cast < Formula
   desc "Typecast Text-to-Speech CLI"
   homepage "https://github.com/neosapience/cast"
+  version "1.0.8"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/neosapience/cast/releases/download/v1.0.7/cast_darwin_amd64.tar.gz"
-      sha256 "39313d6ab5d306678696652dbb11db99cfb140c2bd47296fdb54a6269e79ec2c"
+      url "https://github.com/neosapience/cast/releases/download/v1.0.8/cast_darwin_amd64.tar.gz"
+      sha256 "e05a3f41bf51a3ba51b5e3f414788949ecd5a0c9b5c225544da7cb1fd54ec93e"
 
       define_method(:install) do
         bin.install "cast"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/neosapience/cast/releases/download/v1.0.7/cast_darwin_arm64.tar.gz"
-      sha256 "d88828700ffefbfceb1b2183a7fbeddf456eb5c0a15f4327b7fd0f0ad65baa2e"
+      url "https://github.com/neosapience/cast/releases/download/v1.0.8/cast_darwin_arm64.tar.gz"
+      sha256 "ba4478b96d6a49e5473d67ed4172b251e83b69d201409b90a7e268d70c6fae7e"
 
       define_method(:install) do
         bin.install "cast"
@@ -28,15 +29,15 @@ class Cast < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/neosapience/cast/releases/download/v1.0.7/cast_linux_amd64.tar.gz"
-      sha256 "e2da6568d224ad2f9ee22e6dc37c09777338478d64b4bc1ef1db96d2d16c98eb"
+      url "https://github.com/neosapience/cast/releases/download/v1.0.8/cast_linux_amd64.tar.gz"
+      sha256 "47ab39bfe0edd53f1ee89b7da04dce9112438224c3f71202421226df8120ef80"
       define_method(:install) do
         bin.install "cast"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/neosapience/cast/releases/download/v1.0.7/cast_linux_arm64.tar.gz"
-      sha256 "8ce3d4595e0bc741f62a01ab53393ff061a7391fe21d7c825082f7f1985f80ef"
+      url "https://github.com/neosapience/cast/releases/download/v1.0.8/cast_linux_arm64.tar.gz"
+      sha256 "c8394335831273b43cc8d636edbeeb2037efc05a2b4ca9726611e0422e93e1c1"
       define_method(:install) do
         bin.install "cast"
       end
@@ -44,6 +45,6 @@ class Cast < Formula
   end
 
   test do
-    system bin/"cast", "--help"
+    system "#{bin}/cast", "--help"
   end
 end
