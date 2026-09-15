@@ -1,0 +1,33 @@
+name: Verify formula
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: formula-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: macos-15
+    timeout-minutes: 15
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - name: Register the checked-out formula
+        run: |
+          brew tap --custom-remote neosapience/tap "$GITHUB_WORKSPACE"
+          test "$(git -C "$(brew --repo neosapience/tap)" rev-parse HEAD)" = "$(git rev-parse HEAD)"
+      - run: brew audit --strict neosapience/tap/cast
+      - run: brew style neosapience/tap/cast
+      - run: brew install --formula neosapience/tap/cast
+      - run: brew test neosapience/tap/cast
