@@ -9,16 +9,16 @@ class Cast < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/neosapience/cast/releases/download/v1.0.10/cast_darwin_amd64.tar.gz"
-      sha256 "7f29a3d015efe489bab28e7c44af0aa7748dd845859baf349aff2a0cbd87ab86"
+      url "https://github.com/neosapience/cast/releases/download/v1.0.11/cast_darwin_amd64.tar.gz"
+      sha256 "4f75da63a84babdd9d3d50ae763fb82a0c19da2ce84015f4f2914cd90e34d324"
 
       define_method(:install) do
         bin.install "cast"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/neosapience/cast/releases/download/v1.0.10/cast_darwin_arm64.tar.gz"
-      sha256 "9b144a20590dafe4475af114b0c170b11a70faa72383086219f0e913c093b987"
+      url "https://github.com/neosapience/cast/releases/download/v1.0.11/cast_darwin_arm64.tar.gz"
+      sha256 "d2764a2af35556bd4a9b4062d59e4f45aff0c01547aaf4df47e12476a503b99a"
 
       define_method(:install) do
         bin.install "cast"
@@ -28,15 +28,15 @@ class Cast < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/neosapience/cast/releases/download/v1.0.10/cast_linux_amd64.tar.gz"
-      sha256 "dff0114a4111e9e2d207200d454dfde1d34647ee714ee77b834927596868a57a"
+      url "https://github.com/neosapience/cast/releases/download/v1.0.11/cast_linux_amd64.tar.gz"
+      sha256 "343acdc5a2ff825cad771fd6bae6448efa4c9e18a02ac0e4a2d1fb59e6e54341"
       define_method(:install) do
         bin.install "cast"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/neosapience/cast/releases/download/v1.0.10/cast_linux_arm64.tar.gz"
-      sha256 "3239a0de26e692f133dd8079eae4bd73887e22164d16ea890923af73efa0f8d5"
+      url "https://github.com/neosapience/cast/releases/download/v1.0.11/cast_linux_arm64.tar.gz"
+      sha256 "8fbc04eaee18e03545d20432f256d4380dc43033cc25d5c7f85f81a75e1e1552"
       define_method(:install) do
         bin.install "cast"
       end
